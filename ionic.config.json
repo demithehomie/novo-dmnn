@@ -1,0 +1,9 @@
+{
+  "name": "crud_frontend",
+  "integrations": {},
+  "type": "angular",
+  "serve": {
+    "host": "localhost",
+    "port": 8100
+  }
+}

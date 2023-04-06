@@ -1,0 +1,279 @@
+<ion-content>
+  
+    <ion-header class="header-header">  
+  
+      <div [routerLink]="['/login']">
+        <ion-icon class="login-icon" style="color:#fff;" name="person"></ion-icon>
+        <ion-label class="login-label" style="color:#fff;" class="label-header" >LOGIN</ion-label>
+      </div>
+        |
+        <div style="padding-left: 18px;" [routerLink]="['/signup']">
+          <ion-icon class="signup-icon" style="color:#fff;" name="pencil"></ion-icon>
+          <ion-label class="signup-label"  style="color: #fff; padding-left: 10px;" >CADASTRE-SE</ion-label>
+        </div>
+        
+        
+      
+      </ion-header>
+
+  
+
+      <ion-header class="header hide-header">
+        
+        
+          <ion-img  [routerLink]="['/onboarding']"  style="max-width: 170px; min-width: 170px; padding-right: 60px;" src="../../../assets/images-coopeere/DMNS_LOGO_WHITE-removebg cropped.png"></ion-img>
+        
+    
+        
+        <ion-button fill="clear" style="color:#000;"  [routerLink]="['/']" routerLinkActive="active-link">Home</ion-button>
+        
+        <div class="dropdown">
+          <a [routerLink]="['/onboarding']" style="color:#000;" routerLinkActive="active-link">O que é Domminus? <svg class="arrowicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z"/></svg></a>
+          <div class="dropdown-content">
+            <a [routerLink]="['/quemsomos']" class="dropdown-item">Quem Somos?</a>
+            <a [routerLink]="['/objetivos']" class="dropdown-item">Objetivo</a>
+            <a [routerLink]="['/equipe']" class="dropdown-item">A Equipe</a>
+          </div>
+        </div>
+      
+        <ion-button fill="clear" style="color:#000;"  [routerLink]="['/estatuto']" routerLinkActive="active-link">Core Values</ion-button>
+        <ion-button fill="clear" style="color:#000;"  [routerLink]="['/legislacao']" routerLinkActive="active-link">Compliance</ion-button>
+        <ion-button fill="clear" style="color:#000;" [routerLink]="['/vantagens']" routerLinkActive="active-link">Vantagens</ion-button>
+        <ion-button fill="clear" style="color:#000;"  [routerLink]="['/parceiros']" routerLinkActive="active-link">Parceiros</ion-button>
+        <ion-button fill="clear" style="color:#000;" [routerLink]="['/faleconosco']" routerLinkActive="active-link">Fale Conosco</ion-button>
+
+        
+
+        <div>
+          <a href="#modal_1" class="btn2">
+            <ion-icon style="font-size: 25px; font-weight: bold;" name="search"></ion-icon></a>
+
+      
+      </div>
+
+       <!--pop-up-->
+
+          <div id="modal_1" class="modal">
+              <div class="modalcontent">
+                <form class="modalSearch"  >
+                  <input id="lista" (keydown.enter)="search()" placeholder="Procurar..." type="hidden" 
+                  
+                    style ="background-color: transparent; 
+                            text-align:center; 
+                            border:none; 
+                            font-size:45px; 
+                            margin-top: -150px; 
+                            margin-left: -500px;" 
+                            
+                            type="text"
+                            
+                            (ngModel)="searchTerm"
+                           
+                            >
+
+<!--  [(ngModel)]="pesquisaPagina" -->
+                 <ion-icon name="close" style="color: #fff; font-size: 30px; align-items: end; justify-content: center; margin-right: -500px; margin-bottom: 150px;" (click)="closeSearchInput()"></ion-icon>
+               </form>
+
+                      <p class="modaldescription">
+
+              </div>
+            </div>
+    
+      </ion-header>
+
+    <div class="minimum-header">
+        
+      <ion-img class="logo-min-header" [routerLink]="['/onboarding']"  src="../../../assets/images-coopeere/coopere.png"></ion-img>
+
+     
+      
+
+      <!-- TESTANDO O MENU HAMBURGUER COM DROPDOWN -->
+<div class="menu-min-header">
+      <nav class="thenav">
+        <div class="hamburger-menu-X" (click)="toggleMenu()">
+          <div class="bar-X"></div>
+          <div class="bar-X"></div>
+          <div class="bar-X"></div>
+        </div>
+        <ul class="menu-items-X" *ngIf="showMenu">
+          <br>
+          <ul>
+            <li><a [routerLink]="['/posts']" routerLinkActive="active-link">POSTS</a></li>
+            <li class="dropdown-mmh">
+              <a>A COOPEERE</a>
+              <div class="dropdown-mmh-content">
+                <a [routerLink]="['/quemsomos']" class="dropdown-item">O que é Dominnus?</a>
+                <a [routerLink]="['/objetivos']" class="dropdown-item">Objetivo</a>
+                <a [routerLink]="['/equipe']" class="dropdown-item">A Equipe</a>
+              </div>
+            </li>
+            <li><a [routerLink]="['/estatuto']" routerLinkActive="active-link">Core Values</a></li>
+            <li><a [routerLink]="['/legislacao']" routerLinkActive="active-link">Compliance</a></li>
+            <li><a [routerLink]="['/vantagens']" routerLinkActive="active-link">VANTAGENS</a></li>
+            <li><a [routerLink]="['/parceiros']" routerLinkActive="active-link">PARCEIROS</a></li>
+            <li><a [routerLink]="['/faleconosco']" routerLinkActive="active-link">FALE CONOSCO</a></li>
+          </ul>
+          
+          
+
+          
+        </ul>
+      </nav>
+    </div>   
+
+    <!-- 
+      
+      PACK DE CLASSES EM COMUM EM TODAS AS PAGINAS
+
+      * menu-items-X
+      * minimum-header
+      * menu-min-header
+      * thenav
+      * hamburger-menu-X
+      * bar-X
+    
+    -->
+      
+      <!-- FIM DO TESTE DO MENU HAMBURRGUER COM DROPDOWN -->
+  
+
+      <ion-searchbar class="btn2" [(ngModel)]="searchTerm"> <ion-button fill="clear" (keyup.enter)="search()"> <ion-icon  name="search" style="color: #000; margin-right: -50px;"  class="search-min-header">Procurar</ion-icon> </ion-button></ion-searchbar>
+    </div>
+
+    <!-- <a href="#modal_1" class="btn2"><ion-icon style="font-size: 25px; font-weight: bold;" name="search"></ion-icon></a> -->
+  
+
+<ion-slides pager="true" [options]="slideOpts" class="ion-slides-x">
+
+
+
+  <div class="intro-text">
+  <ion-slide class="slide-c" >
+    <img class="crescer" src="../../../assets/img/bg-blue-slide-1.jpg">
+  
+    <h1 class="text-slider-c">Marketing digital é aqui</h1>
+    <button [routerLink]="['/signup']">CADASTRE-SE</button>  
+  </ion-slide>
+</div>
+
+  <ion-slide class="slide-c"> 
+    <img class="crescer" src="../../../assets/img/bg-blue-slide-2.jpg">
+
+    <h1>O que você procura <br> em profissionais <br> digital?</h1>
+    <button [routerLink]="['/signup']">CADASTRE-SE</button>
+  </ion-slide>
+
+  <ion-slide class="slide-c">
+    <img class="crescer" src="../../../assets/img/bg-blue-slide-3.jpg">
+  
+    <h1>Conteúdo de qualidade  <br> todos os dias. </h1>
+    <button [routerLink]="['/signup']">CADASTRE-SE</button>  
+  </ion-slide>
+
+
+  <ion-slide class="slide-c">
+    <img class="crescer" src="../../../assets/img/bg-blue-slide-4.jpg">
+   
+    <h1> The more you learn, <br> the more you earn.</h1>
+    <button [routerLink]="['/signup']">CADASTRE-SE</button>  
+  </ion-slide>
+
+
+ 
+
+
+  </ion-slides>
+<!--
+<div style="display: flex; flex-direction: row;">
+  <h1 style="text-align:start; padding: 10px;">Apoio:</h1> 
+  <ion-slides style="margin: 0px;"  [options]="slideOpts2" >
+
+    <ion-slide>
+      <img style="min-width: 50%" src="../../../assets/img/cooopeerre.png">      
+    </ion-slide>
+  
+    <ion-slide>
+      <img style="min-width: 50%" src="../../../assets/img/fitmmrj.png">
+    </ion-slide>
+  
+    <ion-slide>
+      <img style="min-width: 50%" src="../../../assets/img/wipdev.jpg">
+    </ion-slide>
+  
+  
+    <ion-slide>
+      <img style="min-width: 50%" src="../../../assets/img/primesol.jpg">
+    </ion-slide>
+  
+    <ion-slide>
+      <img style="min-width: 50%" src="../../../assets/img/redeaurora.jpeg">
+    </ion-slide>
+  
+    <ion-slide>
+      <img style="min-width: 50%" src="../../../assets/img/fotonsolucoes.png">
+    </ion-slide>
+  
+    <ion-slide>
+      <img style="min-width: 50%" src="../../../assets/img/forcasindical.png">
+    </ion-slide>
+
+    <ion-slide>
+      <img class="logo-makrom" src="../../../assets/img/makrom.jpg">
+    </ion-slide>
+  
+    </ion-slides>
+  </div>
+
+    -->
+
+  <ion-footer class="footer"> 
+
+    
+    
+  <section class="p-menu1">
+    <nav id="navbar" class="navigation" role="navigation">
+      <input id="toggle1" type="checkbox" />
+      <label class="hamburger1" for="toggle1">
+        <div class="top"></div>
+        <div class="meat"></div>
+        <div class="bottom"></div>
+      </label>
+
+      <nav class="menu1" >
+        <ion-label style="padding-left: 20px; margin-bottom: -50px;" [routerLink]="['/eventos']">EVENTOS</ion-label>
+        <ion-label style="padding-left: 20px;  margin-top: -30px;" [routerLink]="['/publicacoes']">PUBLICAÇÕES</ion-label>
+        <ion-label style="padding-left: 20px; margin-top: -60px;" [routerLink]="['/agenda']">AGENDA</ion-label>
+        <ion-label style="padding-left: 20px; margin-top: -90px;" [routerLink]="['/galeria']" >GALERIA DE FOTOS</ion-label>
+        <ion-label style="padding-left: 20px; margin-top: -120px; " [routerLink]="['/trabalheconosco']">TRABALHE CONSOCO</ion-label>
+      </nav>
+  </nav>
+
+  
+
+  </section>
+  
+    <div class="menu-footer">
+      <ion-label [routerLink]="['/eventos']">EVENTOS</ion-label>
+      <ion-label [routerLink]="['/publicacoes']">PUBLICAÇÕES</ion-label>
+      <ion-label [routerLink]="['/agenda']">AGENDA</ion-label>
+      <ion-label [routerLink]="['/galeria']" >GALERIA DE FOTOS</ion-label>
+      <ion-label [routerLink]="['/trabalheconosco']">TRABALHE CONSOCO</ion-label>
+    </div>
+  
+    <div class="social-media-icons">
+
+      <!-- ROUTER LINKS NÃO FUNCIONAM COM LINKS DE VERDADE  -->
+      
+      <!-- MAS DEU PRA RESOLVER USANDO UMA FUNÇÃO COM TYPESCRIPT -->
+            
+            <ion-label (click)="openExternalLinkFacebook()">  <ion-img class="new-social-icons" src="../../../assets/images-coopeere/facebook.png"></ion-img>  </ion-label>
+            <ion-label (click)="openExternalLinkInstagram()"> <ion-img class="new-social-icons" src="../../../assets/images-coopeere/instagram.png"></ion-img> </ion-label>
+            <ion-label (click)="openExternalLinkYouTube()"> <ion-img class="new-social-icons" src="../../../assets/images-coopeere/youtube.png"></ion-img> </ion-label>
+          </div>
+          
+    
+    
+  </ion-footer>
+</ion-content>
