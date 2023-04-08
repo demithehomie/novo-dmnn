@@ -54,40 +54,20 @@
   
   </div>
 
-   <!--pop-up
 
-      <div id="modal_1" class="modal">
-          <div class="modalcontent">
-            <form class="modalSearch"  >
-              <input id="lista" (keydown.enter)="search()" placeholder="Procurar..." type="hidden" 
-              
-                style ="background-color: transparent; 
-                        text-align:center; 
-                        border:none; 
-                        font-size:45px; 
-                        margin-top: -150px; 
-                        margin-left: -500px;" 
-                        
-                        type="text"
-                        
-                        (ngModel)="searchTerm"
-                       
-                        >
-
-  [(ngModel)]="pesquisaPagina"  
-             <ion-icon name="close" style="color: #fff; font-size: 30px; align-items: end; justify-content: center; margin-right: -500px; margin-bottom: 150px;" (click)="closeSearchInput()"></ion-icon>
-           </form>
-
-                  <p class="modaldescription">
-
-          </div>
-        </div> -->
 
   </ion-header>
 
+  <ion-header class="searchbar">
+    <ion-toolbar>
+      <ion-searchbar placeholder="Pesquise por título, palavra-chave, etc.." [(ngModel)]="searchTerm" ></ion-searchbar>
+    </ion-toolbar>
+  </ion-header>
+  
+
 <div class="minimum-header">
     
-  <ion-img class="logo-min-header" [routerLink]="['/onboarding']"  src="../../../assets/images-coopeere/coopere.png"></ion-img>
+  <ion-img class="logo-min-header" [routerLink]="['/onboarding']" style="max-width: 30%;" src="../../../assets/images-coopeere/DMNS_LOGO_BLACK-crop.png"></ion-img>
 
  
   
@@ -103,9 +83,9 @@
     <ul class="menu-items-X" *ngIf="showMenu">
       <br>
       <ul>
-        <li><a [routerLink]="['/onboarding']" routerLinkActive="active-link">HOME</a></li>
+        <li><a [routerLink]="['/posts']" routerLinkActive="active-link">POSTS</a></li>
         <li class="dropdown-mmh">
-          <a>A COOPEERE</a>
+          <a>A DMNS</a>
           <div class="dropdown-mmh-content">
             <a [routerLink]="['/quemsomos']" class="dropdown-item">O que é Dominnus?</a>
             <a [routerLink]="['/building']" class="dropdown-item">Objetivo</a>
@@ -156,30 +136,26 @@
 
 <div class="text-container">
 
-<h1 class="big-title">
-  O impacto do ChatGPT
-</h1>
 
-<h2 class="big-subtitle">
-  A ferramenta que dominou o planeta. 
-</h2>
 
-<br> <br>
+  <ion-list>
+    <ion-item *ngFor="let post of posts | filter:searchTerm">
+      <div class="all-posts-page">
+        <h2 class="big-title">{{ post.title }}</h2>
+        <h3 class="big-subtitle">{{ post.subtitle }}</h3>
+        <p class="author">{{ post.author }} - {{ post.date }}</p>
+        <img class="post-image" [src]="post.image" alt="post.alt">
+        <h4 class="post-content">{{ post.content }}</h4>
+      </div>
+    </ion-item>
+  </ion-list>
 
-<img class="post-image" src="../../../assets/posts/00.jpg" alt="OpenAI">
 
-<h4 class="post-content">
-  Nos dias de hoje, o mundo digital está em constante evolução e os negócios precisam estar atentos a todas as oportunidades para se destacar. Com a chegada de Chatbots inteligentes, como o ChatGPT, o mercado de copywriting está prestes a mudar completamente.
 
-  O ChatGPT é um modelo de linguagem natural desenvolvido pela OpenAI, que utiliza a inteligência artificial para gerar textos de alta qualidade e relevância. Isso significa que ele pode ser usado para criar conteúdo em grande escala, sem sacrificar a qualidade ou a originalidade.
-  
-  Com o ChatGPT, os profissionais de copywriting podem reduzir o tempo gasto na pesquisa e produção de conteúdo, permitindo que eles se concentrem em tarefas mais estratégicas e criativas. Além disso, o ChatGPT pode gerar conteúdo em vários formatos, como artigos, posts de redes sociais, e-mails e até mesmo roteiros de vídeo.
-  
-  Outra grande vantagem do ChatGPT é que ele pode ser treinado para imitar o estilo de escrita de qualquer pessoa, incluindo a marca ou empresa que está utilizando a ferramenta. Isso significa que o conteúdo gerado pode parecer que foi escrito por um humano, o que é especialmente importante em uma época em que a autenticidade é altamente valorizada pelos consumidores.
-  
-  Com o ChatGPT, é possível criar conteúdo personalizado para diferentes públicos-alvo e em diferentes idiomas, tornando-se uma solução poderosa para empresas que querem expandir sua presença global. Além disso, como o ChatGPT está sempre aprendendo e se atualizando, ele pode se adaptar rapidamente às mudanças nas tendências e comportamentos do mercado, garantindo que o conteúdo gerado seja sempre relevante e atual.
-  
-  No geral, o ChatGPT tem o potencial de revolucionar o mercado de copywriting, oferecendo uma solução mais rápida, eficiente e personalizada para a criação de conteúdo. Embora a ferramenta não substitua totalmente os profissionais de copywriting, ela pode ajudá-los a se concentrar em tarefas mais estratégicas e criativas, além de oferecer uma maneira de escalar o conteúdo de maneira eficiente e eficaz. Com o ChatGPT, as empresas têm a oportunidade de se destacar no mercado e alcançar seu público-alvo de maneira mais rápida e eficiente do que nunca.
+
+
+
+<h4 >
 </h4>
 
 </div>
@@ -214,7 +190,7 @@
         <ion-label style="padding-left: 20px; margin-top: -90px;" [routerLink]="['/building']" >GALERIA DE FOTOS</ion-label>
         <ion-label style="padding-left: 20px; margin-top: -120px; " [routerLink]="['/building']">TRABALHE CONSOCO</ion-label>
       </nav>
-  </nav>
+  </nav> 
 
   
 
