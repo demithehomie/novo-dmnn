@@ -1,4 +1,34 @@
+.imagens-blog {
+  padding-left: 10%;
+}
+
+.titulos-blog {
+    padding-left: 10%;
+    margin-top: 10%;
+    padding-right: 40%;
+}
+
+.postagens-blog{
+  padding-left: 10%;
+  padding-right: 40%;
+  line-height: 1.8
+}
+
+
+
 @media screen and (max-width: 450px) {
+
+  .titulos-blog {
+    padding-left: 10%;
+    margin-top: 50%;
+    padding-right: 40%;
+}
+
+.postagens-blog{
+  padding-left: 10%;
+  padding-right: 40%;
+  line-height: 1.8
+}
 
   ion-header .searchbar {
     margin-top: 50px;
